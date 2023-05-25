@@ -26,4 +26,6 @@ $ python examples/006.filter-people-by-friends.py
 # Executing application
 ```bash
 $ flask --app main run
+$ # Debug mod
+$ # flask --app app.py --debug run
 ```

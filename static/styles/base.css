@@ -1,0 +1,67 @@
+body {
+    padding-top: 55px;
+    background-color: #f8f9fa;
+    /* padding-left: 30px !important;
+    padding-right: 30px !important; */
+}
+
+nav, footer {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+.alert .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.alert .close:hover {
+    color: black !important;
+    font-weight: bold;
+}
+
+.highlight-background-container {
+    background-color: #e9ecef;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.app-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 0.05rem solid #e5e5e5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container-base-default {
+    max-width: 990px;
+    margin: auto;
+}
+
+.container-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form, row {
+    width: 100%;
+}
