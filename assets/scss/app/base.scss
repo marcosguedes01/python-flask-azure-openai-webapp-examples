@@ -1,0 +1,31 @@
+body {
+    padding-top: 55px;
+    background-color: #f8f9fa;
+}
+
+nav, footer {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+a {
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container-base-default {
+    max-width: 990px;
+    margin: auto;
+}
+
+.container-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form, row {
+    width: 100%;
+}

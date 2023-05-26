@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/app/base.css') }}" />
+    
+    {% block styles %}{% endblock %}
+
+    <title>Azure OpenAI - Exemplos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Azure OpenAI - Exemplos</a>
+    </nav>
+
+    <main role="main">
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top container-base-default">
+        <div class="row">
+            <div class="col-6 col-md">
+                <h5>Azure OpenAI</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://learn.microsoft.com/pt-br/azure/cognitive-services/openai/overview" target="_blank">O que é o Azure OpenAI?</a></li>
+                    <li><a class="text-muted" href="https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu" target="_blank">Formulário de Solicitação de Acesso</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">                
+                <h5>OpenAI</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://platform.openai.com/docs/introduction" target="_blank">Documentação Oficial</a></li>
+                    <li><a class="text-muted" href="https://platform.openai.com/examples" target="_blank">Exemplos</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            <h5>Sobre</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="https://www.linkedin.com/in/marcosguedesjr/" target="_blank">Marcos Guedes (LinkedIn)</a></li>
+                <li><a class="text-muted" href="https://github.com/marcosguedes01/python-flask-azure-openai-webapp-examples" target="_blank">OpenAI Exemplos (código-fonte)</a></li>
+            </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="text/javascript" language="javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    {% block scripts %}{% endblock %}
+    
+</body>
+</html>

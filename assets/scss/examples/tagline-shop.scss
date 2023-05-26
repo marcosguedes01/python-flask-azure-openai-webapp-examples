@@ -1,0 +1,90 @@
+form {
+    input[type=text] {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    button {
+        margin-left: 20px;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        &:last-child {
+            border: 1px #CCC solid;
+        }
+    }
+}
+
+.alert {
+    margin-top: 25px;
+}
+
+.result-container {
+    display: none;
+    
+    h5 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .result-text-container {
+        background-color: #e9ecef;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    // .options-container {
+    //     padding: 30px;
+
+    //     button {
+    //         background-color: white;
+    //         border: 1px #CCC solid;
+    //         padding: 5px 10px;
+    //         border-radius: 5px;
+    //         margin-left: 10px;
+
+    //         &:first-child {
+    //             margin-left: 0px;
+    //         }
+
+    //         &.active {
+    //             background-color: #e7e7e7;
+    //             font-weight: 500;
+    //             color: #000;
+    //         }
+    //     }
+    // }
+
+    .option-content-container {
+        border: 1px #CCC solid;
+        border-radius: 5px;
+        max-width: 600px;
+        margin: auto;
+        text-align: initial;
+        
+        pre {
+            white-space: pre-wrap;       /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            padding: 20px;
+        }
+    }
+}
+
+.select-model-deployment-container {
+    margin: auto;
+    max-width: 300px;
+    margin-bottom: 20px;
+
+    p {
+        font-weight: bold;
+    }
+
+    select option {
+        text-align: center;
+    }
+}

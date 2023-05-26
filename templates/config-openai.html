@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/app/alert.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/pages/config-openai.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container-base-default container-title">
+    <h1>Configurar Azure OpenAI</h1>
+</div>
+
+<div class="my-3 p-3 bg-white rounded shadow-sm container-base-default config-openai-container">
+    <div class="col-md-12 order-md-1">
+        <form id="form-config-openai" class="needs-validation" onsubmit="submitConfigOpenaiForm(event)" novalidate>
+            <div class="row">
+                <h4 class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted">Azure OpenAI</span>
+                </h4>
+                <div class="col-md-12 mb-6 item">
+                    <label for="azureOpenaiApiKey">API Key</label>
+                    <input type="text" class="form-control" id="azureOpenaiApiKey" name="azureOpenaiApiKey" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Campo obrigatório.
+                    </div>
+                </div>
+                <div class="col-md-12 mb-6 item">
+                    <label for="azureOpenaiApiEndpoint">API Endpoint</label>
+                    <input type="text" class="form-control" id="azureOpenaiApiEndpoint" name="azureOpenaiApiEndpoint" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Campo obrigatório.
+                    </div>
+                </div>
+            </div>
+        
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Salvar Dados Localmente</button>
+        </form>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade d-none" role="alert">
+        Operação realizada com sucesso.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
+<div class="my-3 p-3 bg-white rounded shadow-sm container-base-default model-deployments-container">
+    <div class="col-md-12 order-md-1">
+        <form id="form-config-model-deployments" class="needs-validation" onsubmit="submitModelDeploymentsForm(event)" novalidate>
+            <div class="row">
+                <div class="col-md-12 mb-6 item">
+                    <h4 class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">Model deployments</span>
+                    </h4>
+                    <ul class="list-group mb-3 model-deployments-options">
+                        <!-- <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">gpt35turbo</h6>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group" style="display: flex; flex-direction: row;">
+                    <div style="flex-grow: 1;">
+                        <input type="text" class="form-control" id="deploymentName" name="deploymentName" required placeholder="Deployment name">
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-secondary">Adicionar e Salvar Local</button>
+                    </div>
+                  </div>                  
+            </div>
+        </form>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade d-none" role="alert">
+        Operação realizada com sucesso.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
+        <span class="errorMessage">Mensagem de erro</span> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/alert.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/validate-form.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/pages/config-openai.js') }}"></script>
+{% endblock %}
