@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='/styles/examples/tagling-shop.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/app/alert.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/examples/tagline-shop.css') }}" />
 {% endblock %}
 
 {% block content %}
 <div class="container-base-default container-title">
     <h1>Sugestão de slogan para uma loja</h1>
 
-    <div class="my-3 p-3 bg-white rounded shadow-sm container-base-default config-openai-container">
+    <div class="my-3 p-3 bg-white rounded shadow-sm container-base-default main-container">
         <form id="form-config-openai" class="needs-validation" onsubmit="submitForm(event)" novalidate>
             <div class="row">
                 <p>Escreva um seguimento de loja para que seja gerada uma sugestão de Slogan.</p>
@@ -21,14 +22,71 @@
             </div>
         
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Executar</button>
+
+            <div class="select-model-deployment-container">
+                <p>Selecione o Model Deployment:</p>
+                <select class="form-select" aria-label="Selecione o Model Deployment" required></select>
+                <div class="invalid-feedback">
+                    Campo obrigatório.
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+                <span class="spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                <span class="text">Executar</span>
+            </button>
+
+            <button class="btn btn-light btn-lg btn-block" type="button">
+                Resetar
+            </button>
         </form>
+
+        <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
+            <span class="errorMessage">Mensagem de erro</span> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm container-base-default result-container">
+        <div class="result-text-container">
+            <!-- O retorno da api aparecerá aqui -->
+        </div>
+
+        <!-- <div class="options-container">
+            <button class="active">Código Python</button>
+            <button>Prompt</button>
+            <button>Resposta</button>
+        </div> -->
+
+        <h5>Código Executado</h5>
+
+        <div class="option-content-container">
+<pre><code class="executed-code">import openai
+
+openai.api_key = { AZURE_OPENAI_API_KEY }
+openai.api_base = { AZURE_OPENAI__API_ENDPOINT }
+openai.api_type = 'azure'
+openai.api_version = '2023-05-15'
+
+modelDeployment = "textdavince003"
+
+response = openai.Completion.create(
+    engine=modelDeployment,
+    prompt=prompt,
+    max_tokens=100
+)
+
+result = response['choices'][0]['text'].replace('\n', '').replace(' .', '.').strip()</code></pre>
+        </div>
     </div>
 </div>
 
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/validate-form.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/alert.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/validate-form.js') }}"></script>
 <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/examples/tagline-shop.js') }}"></script>
 {% endblock %}

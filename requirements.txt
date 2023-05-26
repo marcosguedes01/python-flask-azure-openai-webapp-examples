@@ -4,3 +4,5 @@ requests==2.31.0
 jsonify==0.5
 blueprint==3.4.2
 Flask-Scss==0.5
+openai==0.27.7
+python-dotenv==1.0.0

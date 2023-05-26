@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='/styles/alert.css') }}" />
-<link rel="stylesheet" href="{{ url_for('static', filename='/styles/config-openai.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/app/alert.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/pages/config-openai.css') }}" />
 {% endblock %}
 
 {% block content %}
@@ -92,7 +92,7 @@
     </div>
 
     <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
-        Erro: <span class="errorMessage">Mensagem de erro</span> 
+        <span class="errorMessage">Mensagem de erro</span> 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -102,6 +102,7 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/validate-form.js') }}"></script>
-<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/config-openai.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/alert.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/app/validate-form.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/pages/config-openai.js') }}"></script>
 {% endblock %}
