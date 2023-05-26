@@ -3,3 +3,4 @@ template-render==0.1.0
 requests==2.31.0
 jsonify==0.5
 blueprint==3.4.2
+Flask-Scss==0.5

@@ -1,0 +1,48 @@
+.alert {
+    margin-top: 25px;
+}
+
+form {
+    .item {
+        margin-top: 20px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    .row {
+        h4 {
+            margin: 0px;
+            margin-top: 30px;
+        }
+
+        &:first-child h4 {
+            margin-top: 0px;
+        }
+    }
+}
+
+
+.model-deployments-options {
+    margin-top: 10px;
+
+    li div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    button {
+        background-color: transparent;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #999;
+
+        &:hover {
+            color: black !important;
+            font-weight: bold;
+        }
+    }
+}

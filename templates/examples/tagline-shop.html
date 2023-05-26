@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/examples/tagling-shop.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container-base-default container-title">
+    <h1>Sugestão de slogan para uma loja</h1>
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm container-base-default config-openai-container">
+        <form id="form-config-openai" class="needs-validation" onsubmit="submitForm(event)" novalidate>
+            <div class="row">
+                <p>Escreva um seguimento de loja para que seja gerada uma sugestão de Slogan.</p>
+                <div class="item">
+                    <input type="text" class="form-control" id="shopName" name="shopName" placeholder="Ex.: Concessionária de Veículos" value="" required>
+                    <div class="invalid-feedback">
+                        Campo obrigatório.
+                    </div>
+                </div>
+            </div>
+        
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Executar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/validate-form.js') }}"></script>
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/examples/tagline-shop.js') }}"></script>
+{% endblock %}

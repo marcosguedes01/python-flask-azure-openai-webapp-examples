@@ -1,4 +1,8 @@
-.highlight-message-container {
+.highlight-background-container {
+  background-color: #e9ecef;
+  padding-left: 30px;
+  padding-right: 30px; }
+
+  .highlight-message-container {
     padding-top: 30px;
-    padding-bottom: 30px;
-}
+    padding-bottom: 30px; }

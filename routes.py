@@ -12,6 +12,8 @@ def hello_world():
 def about():
     return render_template("config-openai.html")
 
+#tagline_shop
+
 @routes_bp.route('/get_localstorage', methods=['GET', 'POST'])
 def get_localstorage():
     return getLocalstorage()
