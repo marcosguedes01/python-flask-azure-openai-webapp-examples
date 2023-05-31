@@ -1,17 +1,20 @@
-from flask import request, jsonify
+from flask import request, jsonify, json
 from service.openai_service import OpenaiService
 from api.openai.generateCodeToResult import generateCodeToResult
 
-def generateTaglineShop():
+def generateFriendshipSuggestions():
     data = request.get_json()
-    input = data['input']
+    peopleList = data['input']['peopleList']
+    personName = data['input']['personName']
     azureOpenaiApiKey = data['azureOpenaiApiKey']
     azureOpenaiApiEndpoint = data['azureOpenaiApiEndpoint']
     modelDeployment = data['modelDeployment']
 
     openaiService = OpenaiService(azureOpenaiApiKey, azureOpenaiApiEndpoint)
 
-    prompt = """Crie um slogan criativo para {} sem utilizar a palavra {} no slogan""".format(input, input)
+    prompt = """Considere as seguintes pessoas: {}
+retorne sugestões de pessoas que podem conhecer {}
+return apenas um array de json no seguinte formato {{ "id": 1, "name": "nome da pessoa" }}""".format(json.dumps(peopleList), personName, personName)
 
     response = openaiService.execute(modelDeployment, prompt)
 
@@ -19,7 +22,7 @@ def generateTaglineShop():
 
     result = {
         'code': code,
-        'result': response
+        'result': json.loads(response)
     }
 
     return jsonify(result)
