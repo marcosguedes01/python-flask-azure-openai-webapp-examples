@@ -10,3 +10,7 @@ def hello_world():
 @routes_app_bp.route('/config-openai')
 def about():
     return render_template("config-openai.html")
+
+@routes_app_bp.route("/examples/<pagename>")
+def taglineShop(pagename):
+    return render_template(f"examples/{pagename}.html")

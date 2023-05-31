@@ -1,0 +1,25 @@
+{% extends 'examples/base-example.html' %}
+
+{% block pageTitle %}Sugestão de Amizades{% endblock %}
+
+{% block userInput %}
+<input type="hidden" id="storageName" name="storageName" value="lastFriendShipSuggestions" />
+<input type="hidden" id="openaiEndpointName" name="openaiEndpointName" value="friendship-suggestion" />
+<div class="row">
+    <div class="item">
+        <label for="peopleList">Lista de pessoas para análise de sugestão de amizades:</label>
+        <textarea name="peopleList" id="peopleList" cols="30" rows="10"></textarea>
+    </div>
+    <div class="item" style="margin-top: 30px;">
+        <label for="personName">Com base no json acima, informe um nome para verificação de sugestão de amizade.</label>
+        <input type="text" class="form-control" id="personName" name="personName" placeholder="Ex.: João" value="" required>
+        <div class="invalid-feedback">
+            Campo obrigatório.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block exampleScripts %}
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/examples/friendship-suggestions.js') }}"></script>
+{% endblock %}
