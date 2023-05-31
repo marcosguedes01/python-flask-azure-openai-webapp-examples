@@ -1,6 +1,6 @@
 {% extends 'examples/base-example.html' %}
 
-{% block pageTitle %}Sugestão de amizades{% endblock %}
+{% block pageTitle %}Sugestão de Amizades{% endblock %}
 
 {% block userInput %}
 <input type="hidden" id="storageName" name="storageName" value="lastFriendShipSuggestions" />
@@ -11,8 +11,8 @@
         <textarea name="peopleList" id="peopleList" cols="30" rows="10"></textarea>
     </div>
     <div class="item" style="margin-top: 30px;">
-        <label for="name">Com base no json acima, informe um nome para verificação de sugestão de amizade.</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Ex.: João" value="" required>
+        <label for="personName">Com base no json acima, informe um nome para verificação de sugestão de amizade.</label>
+        <input type="text" class="form-control" id="personName" name="personName" placeholder="Ex.: João" value="" required>
         <div class="invalid-feedback">
             Campo obrigatório.
         </div>

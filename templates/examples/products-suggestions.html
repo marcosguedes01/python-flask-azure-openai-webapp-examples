@@ -1,0 +1,25 @@
+{% extends 'examples/base-example.html' %}
+
+{% block pageTitle %}Sugestão de Produtos{% endblock %}
+
+{% block userInput %}
+<input type="hidden" id="storageName" name="storageName" value="lastProductsSuggestions" />
+<input type="hidden" id="openaiEndpointName" name="openaiEndpointName" value="products-suggestion" />
+<div class="row">
+    <div class="item">
+        <label for="productList">Lista de produtos para análise de semelhantes:</label>
+        <textarea name="productList" id="productList" cols="30" rows="10"></textarea>
+    </div>
+    <div class="item" style="margin-top: 30px;">
+        <label for="productName">Com base no json acima, informe um nome de produto para receber sugestões.</label>
+        <input type="text" class="form-control" id="productName" name="productName" placeholder="Ex.: Camiseta" value="" required>
+        <div class="invalid-feedback">
+            Campo obrigatório.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block exampleScripts %}
+<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='/scripts/examples/products-suggestions.js') }}"></script>
+{% endblock %}

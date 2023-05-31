@@ -70,7 +70,7 @@ function fillResultContainer(data) {
 function getOpenaiInputData() {
     return {
         peopleList: JSON.parse($("textarea[name=peopleList]").val()),
-        personName: $("input[name=name]").val()
+        personName: $("input[name=personName]").val()
     };
 }
 
@@ -82,12 +82,12 @@ function fillControls(dataLoaded) {
     };
 
     $("textarea[name=peopleList]").val(JSON.stringify(dataLoaded.input.peopleList, undefined, 4));
-    $("input[name=name]").val(dataLoaded.input.personName);
+    $("input[name=personName]").val(dataLoaded.input.personName);
     $(".select-model-deployment-container select").val(dataLoaded.modelDeployment).change();
 }
 
 // função obrigatória
 function resetControls() {
     $("textarea[name=peopleList]").val(JSON.stringify(DEFAULT_INPUT_FRIENDSHIP_SUGGESTIONS, undefined, 4));
-    $("input[name=name]").val("");
+    $("input[name=personName]").val("");
 }

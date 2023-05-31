@@ -43,13 +43,14 @@ $(document).ready(function(){
     }
 });
 
-function resetLocalStorageData() {
+function resetLocalStorageData(resetControls=true) {
     const storageName = $("input[name=storageName]").val();
     if (storageName) {
         localStorage.removeItem(storageName);
     }
     $("form").removeClass("was-validated");
-    resetControls();
+    
+    if (resetControls) resetControls();
 }
 
 function fillResponse(response) {
@@ -131,7 +132,7 @@ function executeOpenai(azureOpenaiConfigData, modelDeployment) {
             console.log("erro", jqXHR, textStatus, errorThrown)
             enableSubmitButton(true);
             $(".result-container").fadeOut();
-            resetLocalStorageData();
+            resetLocalStorageData(false);
             showErrorMessage("main-container", "Ocorreu um erro inesperado. Verifique as informações e tente novamente.");
         }
     });
